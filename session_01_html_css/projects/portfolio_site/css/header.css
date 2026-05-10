@@ -1,0 +1,30 @@
+* {
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8fafc;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+nav ul li a {
+    text-decoration: none;     /* Bỏ gạch chân mặc định */
+    color: #333;               /* Màu chữ đen xám */
+    font-weight: 500;
+}
