@@ -1,8 +1,7 @@
 .skills-section {
+    background-color: #f8fafc; /* Màu nền xám nhạt để làm nổi bật card trắng */
     padding: 100px 0;
-    background-color: var(--color-light);
 }
-
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
@@ -34,4 +33,38 @@
     background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)); /* Gradient */
     border-radius: 10px;
     transition: width 1s ease-out; 
+}
+
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem;
+    padding: 20px;
+}
+
+.skill-item {
+    background-color: #ffffff;    
+    padding: 1.5rem 2rem;        
+    border-radius: 15px;        
+    
+    /* Hiệu ứng đổ bóng nhẹ để khung nổi lên trên nền xám */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); 
+    
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px); 
+}
+
+
+.skill-name {
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.skill-percentage {
+    color: #6366f1;
+    font-weight: 600;
 }
