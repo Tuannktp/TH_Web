@@ -3,6 +3,19 @@
     background-color: white;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--color-dark);
+}
+
 .portfolio-filters {
     display: flex;
     justify-content: center;
@@ -28,8 +41,20 @@
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
 }
 .portfolio-item {
     position: relative;
@@ -40,13 +65,13 @@
 
 .portfolio-item img {
     width: 100%;
-    aspect-ratio: 4/3; 
+    aspect-ratio: 4/3; /* Giữ khung ảnh cố định */
     object-fit: cover;
     transition: transform 0.4s ease;
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.1); 
+    transform: scale(1.1); /* Phóng to 10% */
 }
 
 .portfolio-overlay {
@@ -58,10 +83,55 @@
     justify-content: flex-end;
     padding: 1.5rem;
     color: white;
-    opacity: 0; 
+    opacity: 0; /* Mặc định ẩn */
     transition: opacity 0.3s ease;
 }
 
 .portfolio-item:hover .portfolio-overlay {
-    opacity: 1; 
+    opacity: 1; /* Hiện khi di chuột vào */
+}
+
+.portfolio-overlay h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-overlay p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: #888;
 }
